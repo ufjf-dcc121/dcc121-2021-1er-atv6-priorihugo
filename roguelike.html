@@ -486,16 +486,33 @@
 
       for( let i=0; i < celulas.length ; i++){
 
-        celulas[i].addEventListener("click" , testeClasse ,false);
+        celulas[i].addEventListener("click" , trocaClasse ,false);
         if(celulas[i].classList.item(0) == null)
           celulas[i].classList.add("parede");
       }
 
-      function testeClasse(ev){
-        for(i=0 ; i < ev.target.classList.length ; i++){
-          let cl = ev.target.classList.item(i)
-          console.log(cl)
-        }
+      function trocaClasse(ev){
+          let cl = ev.target.classList.item(0);
+          console.log("antes: " + cl)
+
+          switch(cl){
+            case "parede":
+              ev.target.classList.remove("parede");
+              break;
+            case null:
+              ev.target.classList.add("orc");
+              break;
+            case "orc":
+              ev.target.classList.remove("orc");
+              ev.target.classList.add("tesouro");
+              break;
+            case "tesouro":
+              ev.target.classList.remove("tesouro");
+              ev.target.classList.add("parede");
+              break;
+          }
+          cl = ev.target.classList.item(0);
+          console.log("depois: " + cl)
       }
     </script>
   </body>
