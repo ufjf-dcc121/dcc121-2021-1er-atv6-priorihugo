@@ -491,8 +491,12 @@
           celulas[i].classList.add("parede");
       }
 
-      
-
+      function testeClasse(ev){
+        for(i=0 ; i < ev.target.classList.length ; i++){
+          let cl = ev.target.classList.item(i)
+          console.log(cl)
+        }
+      }
     </script>
   </body>
 </html>
