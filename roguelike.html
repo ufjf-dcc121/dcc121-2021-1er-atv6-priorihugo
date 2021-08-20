@@ -485,7 +485,8 @@
       const celulas = document.querySelectorAll("td");
 
       for( let i=0; i < celulas.length ; i++){
-        celulas[i].classList.add("parede");
+        if(celulas[i].classList.item(0) == null)
+          celulas[i].classList.add("parede");
       }
 
     </script>
